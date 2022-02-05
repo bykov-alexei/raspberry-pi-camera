@@ -1,0 +1,13 @@
+[Unit]
+Description=auto start stream
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/home/pi/raspberry-pi-camera/run.sh
+User=pi
+WorkingDirectory=/home/pi/raspberry-pi-camera
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
