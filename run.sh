@@ -1,1 +1,1 @@
-v4l2rtspserver -W 640 -H 480 -F 15 -P 8554 /dev/video0
+raspivid -o - -t 0 -rot 180 -w 1920 -h 1080 -fps 30 -b 2000000 | cvlc -vvv stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/stream}' :demux=h264
