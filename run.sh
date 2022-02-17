@@ -1,2 +1,2 @@
 #!/bin/bash
-raspivid -o - -t 0 -rot 180 -w 800 -h 600 -fps 30 -b 2000000 | nc -k -l 8554
+raspivid -t -0 -rot 180 -w 1920 -h 1080 -hf -ih -fps 20 -o - | nc -k -l 8554
